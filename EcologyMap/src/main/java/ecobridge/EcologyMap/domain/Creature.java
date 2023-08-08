@@ -31,9 +31,9 @@ public class Creature {
     private String image_url;
 
     //카테고리 ID
-    @ManyToOne //여러개의 생물은 하나의 카테고리일 수 있으므로 ManyToOne
-    @JoinColumn(name = "main_category_id") //category_id column 을 외래키로 추가
-    private Main_Category category; //Creature_category entity 를 객체로 생성. Creature 에서 creature_category 의 category_name 에 접근하고 싶을때 해당 변수 사용
+    @ManyToOne
+    @JoinColumn(name = "main_category_id")
+    private Main_Category category;
 
     @JoinColumn(name = "category_id")
     private Long category_id;
