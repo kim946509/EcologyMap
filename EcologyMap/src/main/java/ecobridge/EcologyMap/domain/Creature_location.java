@@ -22,11 +22,11 @@ public class Creature_location {
     private Long id;
 
     //위도
-    @Column
+    @Column(name="creature_latitude")
     private double creature_latitude;
 
     //경도
-    @Column
+    @Column(name="creature_longitude")
     private double creature_longitude;
 
     //생물 ID
@@ -36,7 +36,7 @@ public class Creature_location {
 
 
     //장소 이름
-    @Column
+    @Column(name="location_name")
     private String location_name;
 
 
