@@ -14,34 +14,34 @@ public class Creature {
     //생물 ID
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="creature_id", updatable = false)
+    @Column(name = "creature_id", updatable = false)
     private Long creature_id;
 
     //생물 보호등급
-    @Column(name="creature_protection_class", nullable = false)
+    @Column(name = "creature_protection_class", nullable = false)
     private Long creature_protection_class;
 
     //생물 정보
 
-    @Column(name="creature_information", nullable = false)
+
+    @Column(name = "creature_information", nullable = false)
     private String creature_information;
 
     //이미지 URL
-    @Column(name="image_url", nullable = false)
+    @Column(name = "image_url", nullable = false)
     private String image_url;
 
     //카테고리 ID
     @ManyToOne //여러개의 생물은 하나의 카테고리일 수 있으므로 ManyToOne
-    @JoinColumn(name="main_category_id") //category_id column 을 외래키로 추가
+    @JoinColumn(name = "main_category_id") //category_id column 을 외래키로 추가
     private Main_Category category; //Creature_category entity 를 객체로 생성. Creature 에서 creature_category 의 category_name 에 접근하고 싶을때 해당 변수 사용
 
-    @JoinColumn(name="category_id")
-    private Long category_id2;
+    @JoinColumn(name = "category_id")
+    private Long category_id;
 
 
     //생물 이름
     @Column(name = "creature_name", nullable = false)
     private String creature_name;
+
 }
-
-
