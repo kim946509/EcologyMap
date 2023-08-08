@@ -23,7 +23,6 @@ public class Creature {
 
     //생물 정보
 
-
     @Column(name = "creature_information", nullable = false)
     private String creature_information;
 
