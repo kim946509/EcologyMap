@@ -37,4 +37,6 @@ public class Creature_location {
     //장소 이름
     @Column
     private String location_name;
+
+
 }
