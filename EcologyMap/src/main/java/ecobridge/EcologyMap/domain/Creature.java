@@ -5,8 +5,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import org.hibernate.annotations.ColumnDefault;
+import org.springframework.data.annotation.Id;
 
 
 @Entity
@@ -25,8 +24,8 @@ public class Creature {
     private Long creature_protection_class;
 
     //생물 정보
-    @Column(name = "creature_description", nullable = false)
-    private String creature_description;
+    @Column(name = "creature_information", nullable = false)
+    private String creature_information;
 
     //이미지 URL
     @Column(name = "image_url", nullable = false)
@@ -35,14 +34,21 @@ public class Creature {
     //카테고리 ID
     @ManyToOne //여러개의 생물은 하나의 카테고리일 수 있으므로 ManyToOne
     @JoinColumn(name = "main_category_id") //category_id column 을 외래키로 추가
-    private Main_Category category; //Creature_category entity 를 객체로 생성. Creature 에서 creature_category 의 category_name 에 접근하고 싶을때 해당 변수 사용
+    private Main_Category main_category; //Creature_category entity 를 객체로 생성. Creature 에서 creature_category 의 category_name 에 접근하고 싶을때 해당 변수 사용
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private Main_Category detail_category;
+    private Detail_Category detail_category;
 
     //생물 이름
     @Column(name = "creature_name", nullable = false)
     private String creature_name;
+
+    @Builder //빌더 패턴으로 객체 생성
+    public Creature(String creature_name, String creature_information) {
+        this.creature_name = creature_name;
+        this.creature_information = creature_information;
+    }
+
     
 }
