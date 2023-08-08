@@ -1,4 +1,4 @@
-package EcologyMap.src.main.java.ecobridge.EcologyMap.domain;
+package ecobridge.EcologyMap.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
