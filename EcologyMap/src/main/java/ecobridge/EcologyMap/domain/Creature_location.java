@@ -8,28 +8,32 @@ import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PROTECTED) //접근제어자가 protected 인 기본생성자 코드없이 생성
 public class Creature_location {
 
+    //고유 ID
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", updatable = false)
     private Long id;
 
-    //생물 보호등급
-    @Column(name="creature_latitude", nullable = false)
+    //위도
+    @Column(name="creature_latitude")
     private Long creature_latitude;
 
-    @Column(name="creature_longitude", nullable = false)
+    //경도
+    @Column(name="creature_longitude")
     private Long creature_longitude;
 
-
-
-    @ManyToOne
-    @JoinColumn(name="creature_id") //
+    //생물 ID
+    @ManyToOne //Creation_location 엔티티가 하나의 Creature 엔티티와 관계를 맺을 수 있음을 나타냄.
+    @JoinColumn(name="creature_id")
     private Creature creature;
 
     //장소 이름
-    @Column(name="location_name", nullable = false)
+    @Column(name="location_name")
     private String location_name;
+
+
+
 }

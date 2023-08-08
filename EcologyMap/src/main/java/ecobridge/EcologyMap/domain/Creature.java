@@ -39,7 +39,6 @@ public class Creature {
     @JoinColumn(name = "category_id")
     private Long category_id;
 
-
     //생물 이름
     @Column(name = "creature_name", nullable = false)
     private String creature_name;

@@ -17,4 +17,3 @@ public class Creature_Activity_Season {
     @JoinColumn(name="Season_id")
     private Long season_id;
 }
-

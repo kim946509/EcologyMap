@@ -17,4 +17,6 @@ public class Season {
 
     @Column(name="Season_name")
     private String season_name;
+
 }
+
