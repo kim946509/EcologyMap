@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 
+import org.hibernate.annotations.ColumnDefault;
+
+
 @Entity
 @Getter //자동으로 GET메서드를 통해 필드 접근 가능
 @NoArgsConstructor(access = AccessLevel.PROTECTED) //접근제어자가 protected인 기본생성자 코드없이 생성
@@ -18,11 +21,10 @@ public class Creature {
     private Long creature_id;
 
     //생물 보호등급
-    @Column(name = "creature_protection_class", nullable = false)
+    @Column(name="creature_protection_class", nullable = false)
     private Long creature_protection_class;
 
     //생물 정보
-
     @Column(name = "creature_information", nullable = false)
     private String creature_information;
 
@@ -35,8 +37,9 @@ public class Creature {
     @JoinColumn(name = "main_category_id")
     private Main_Category category;
 
+    @ManyToOne
     @JoinColumn(name = "category_id")
-    private Long category_id;
+    private Detail_Category detail_category;
 
 
     //생물 이름
@@ -44,3 +47,6 @@ public class Creature {
     private String creature_name;
 
 }
+
+
+
