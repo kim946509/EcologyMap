@@ -2,6 +2,7 @@ package ecobridge.EcologyMap.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -24,7 +25,6 @@ public class Creature {
     private Long creature_protection_class;
 
     //생물 정보
-
     @Column(name = "creature_description", nullable = false)
     private String creature_description;
 
@@ -46,4 +46,3 @@ public class Creature {
     private String creature_name;
     
 }
-
