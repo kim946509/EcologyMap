@@ -18,6 +18,4 @@ public class Main_Category {
 
     @Column(name="Main_category_name", nullable = false)
     private String Main_category_name;
-
 }
-

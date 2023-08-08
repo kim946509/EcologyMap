@@ -1,6 +1,5 @@
 package ecobridge.EcologyMap.domain;
 
-import ecobridge.EcologyMap.domain.Creature;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -25,12 +24,12 @@ public class Creature_location {
     private Long creature_longitude;
 
 
+
     @ManyToOne
-    @JoinColumn(name="creature_id")
+    @JoinColumn(name="creature_id") //
     private Creature creature;
 
     //장소 이름
     @Column(name="location_name", nullable = false)
     private String location_name;
-
 }
