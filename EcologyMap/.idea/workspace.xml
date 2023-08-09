@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1c9bfe3-efd4-4230-9628-ad5967bd03eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EcologyMapAPI/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../EcologyMapAPI/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../EcologyMapAPI/.idea/misc.xml" beforeDir="false" />
@@ -120,7 +120,7 @@
       <updated>1691225746258</updated>
       <workItem from="1691225748849" duration="14832000" />
       <workItem from="1691465532897" duration="16109000" />
-      <workItem from="1691544156803" duration="3454000" />
+      <workItem from="1691544156803" duration="3618000" />
     </task>
     <servers />
   </component>
