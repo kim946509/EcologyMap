@@ -46,7 +46,18 @@ public class Creature {
     @Column(name = "creature_name", nullable = false)
     private String creature_name;
 
+    @Column(name = "spring", nullable = false)
+    private boolean spring;
+
+    @Column(name = "summer", nullable = false)
+    private boolean summer;
+
+    @Column(name = "fall", nullable = false)
+    private boolean fall;
+
+    @Column(name = "winter", nullable = false)
+    private boolean winter;
+
+
+
 }
-
-
-
