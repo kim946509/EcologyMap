@@ -58,6 +58,7 @@ public class Creature {
     @Column(name = "winter", nullable = false)
     private boolean winter;
 
-
-
 }
+
+
+
