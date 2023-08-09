@@ -39,5 +39,5 @@ out/
 <<<<<<< HEAD
 
 #DB
-.EcologyMap/EcologyMap/src/main/resources/application.properties
+.EcologyMap/src/main/resources/application.properties
 
