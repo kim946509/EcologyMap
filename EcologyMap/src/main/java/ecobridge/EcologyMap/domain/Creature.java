@@ -2,11 +2,11 @@ package ecobridge.EcologyMap.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-
 import org.hibernate.annotations.ColumnDefault;
+
 
 
 @Entity
@@ -21,18 +21,19 @@ public class Creature {
     private Long creature_id;
 
     //생물 보호등급
-    @Column(name="creature_protection_class", nullable = false)
+    @Column(name = "creature_protection_class", nullable = false)
     private Long creature_protection_class;
 
     //생물 정보
     @Column(name = "creature_information", nullable = false)
     private String creature_information;
 
+
     //이미지 URL
     @Column(name = "image_url", nullable = false)
     private String image_url;
 
-    //카테고리 ID
+    //메인카테고리 ID
     @ManyToOne
     @JoinColumn(name = "main_category_id")
     private Main_Category category;
@@ -41,10 +42,10 @@ public class Creature {
     @JoinColumn(name = "category_id")
     private Detail_Category detail_category;
 
-
     //생물 이름
     @Column(name = "creature_name", nullable = false)
     private String creature_name;
+
 
     @Column(name = "spring", nullable = false)
     private boolean spring;
@@ -58,7 +59,17 @@ public class Creature {
     @Column(name = "winter", nullable = false)
     private boolean winter;
 
+
+
+
+
+    @Builder //빌더 패턴으로 객체 생성
+    public Creature(String creature_information, String creature_name, Long creature_protection_class, String image_url) {
+        this.creature_information = creature_information;
+        this.creature_name = creature_name;
+        this.creature_protection_class = creature_protection_class;
+        this.image_url = image_url;
+    }
+
 }
-
-
 

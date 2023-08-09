@@ -1,7 +1,4 @@
-
 package ecobridge.EcologyMap.domain;
-
-
 import jakarta.persistence.*;
 import jdk.jfr.StackTrace;
 import lombok.AccessLevel;
@@ -11,15 +8,16 @@ import lombok.Setter;
 
 import java.util.Set;
 
+
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED) //접근제어자가 protected 인 기본생성자 코드없이 생성
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Creature_location {
 
     //고유 ID
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id",updatable = false)
+    @Column(name="id", updatable = false)
     private Long id;
 
     //위도
@@ -35,9 +33,11 @@ public class Creature_location {
     @JoinColumn(name = "creature_id")
     private Creature creature;
 
-
     //장소 이름
-    @Column(name="location_name")
+    @Column(name="location_name", nullable = false)
+
     private String location_name;
 
 }
+
+
