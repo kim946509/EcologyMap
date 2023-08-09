@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c9bfe3-efd4-4230-9628-ad5967bd03eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EcologyMapAPI/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EcologyMapAPI/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EcologyMapAPI/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EcologyMapAPI/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EcologyMapAPI/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EcologyMapAPI/EcologyMapAPI.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EcologyMapAPI/src/Main.java" beforeDir="false" />
-    </list>
+    <list default="true" id="c1c9bfe3-efd4-4230-9628-ad5967bd03eb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,5 +117,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
