@@ -5,6 +5,9 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
+
+
 
 @Entity
 @Getter //자동으로 GET메서드를 통해 필드 접근 가능
@@ -25,11 +28,12 @@ public class Creature {
     @Column(name = "creature_information", nullable = false)
     private String creature_information;
 
+
     //이미지 URL
     @Column(name = "image_url", nullable = false)
     private String image_url;
 
-    //카테고리 ID
+    //메인카테고리 ID
     @ManyToOne
     @JoinColumn(name = "main_category_id")
     private Main_Category category;
@@ -41,6 +45,23 @@ public class Creature {
     //생물 이름
     @Column(name = "creature_name", nullable = false)
     private String creature_name;
+
+
+    @Column(name = "spring", nullable = false)
+    private boolean spring;
+
+    @Column(name = "summer", nullable = false)
+    private boolean summer;
+
+    @Column(name = "fall", nullable = false)
+    private boolean fall;
+
+    @Column(name = "winter", nullable = false)
+    private boolean winter;
+
+
+
+
 
     @Builder //빌더 패턴으로 객체 생성
     public Creature(String creature_information, String creature_name, Long creature_protection_class, String image_url) {
