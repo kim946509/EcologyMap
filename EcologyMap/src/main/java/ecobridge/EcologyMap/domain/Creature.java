@@ -2,9 +2,9 @@ package ecobridge.EcologyMap.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
 
 @Entity
 @Getter //자동으로 GET메서드를 통해 필드 접근 가능
@@ -22,8 +22,6 @@ public class Creature {
     private Long creature_protection_class;
 
     //생물 정보
-
-
     @Column(name = "creature_information", nullable = false)
     private String creature_information;
 
@@ -36,11 +34,21 @@ public class Creature {
     @JoinColumn(name = "main_category_id")
     private Main_Category category;
 
+    @ManyToOne
     @JoinColumn(name = "category_id")
-    private Long category_id;
+    private Detail_Category detail_category;
 
     //생물 이름
     @Column(name = "creature_name", nullable = false)
     private String creature_name;
 
+    @Builder //빌더 패턴으로 객체 생성
+    public Creature(String creature_information, String creature_name, Long creature_protection_class, String image_url) {
+        this.creature_information = creature_information;
+        this.creature_name = creature_name;
+        this.creature_protection_class = creature_protection_class;
+        this.image_url = image_url;
+    }
+
 }
+

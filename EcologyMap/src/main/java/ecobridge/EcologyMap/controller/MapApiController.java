@@ -9,6 +9,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import ecobridge.EcologyMap.dto.CreatureResponse;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController //HTTP Response Body 에 객체 데이터를 JSON 형싟으로 변환하는 컨트롤러
@@ -26,4 +31,31 @@ public class MapApiController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(savedCreature);
     }
+
+
+    // /api/creatures GET 요청이 오면 글 목록을 조회할 findAllCreatures() 메서드 작성
+    @GetMapping("/api/creatures")
+    public ResponseEntity<List<CreatureResponse>> findAllCreatures() {
+        Optional<Object> creatures = CreatureService.findAll(); // List<Creature>를 반환하는 것으로 가정
+
+        List<CreatureResponse> creatureResponses = creatures.stream()
+                .map(CreatureResponse::new)
+                .toList();
+
+        return ResponseEntity.ok()
+                .body(creatureResponses);
+    }
+
+
+    //생물 정보 조회
+    //HTTP 메서드가 POST 일 때 전달받은 URL 과 동일한 메서드로 매핑
+    @GetMapping("/api/creatures/{creature_id}")
+    // URL 경로에서 값 추출
+    public ResponseEntity<CreatureResponse> findCreature(@PathVariable long id) {
+        Creature creature = CreatureService.findById(creature_id);
+
+        return ResponseEntity.ok()
+                .body(new CreatureResponse(creature));
+    }
+
 }

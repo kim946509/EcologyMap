@@ -8,7 +8,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED) //접근제어자가 protected 인 기본생성자 코드없이 생성
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Creature_location {
 
     //고유 ID
@@ -31,9 +31,9 @@ public class Creature_location {
     private Creature creature;
 
     //장소 이름
-    @Column(name="location_name")
+    @Column(name="location_name", nullable = false)
     private String location_name;
 
-
-
 }
+
+
